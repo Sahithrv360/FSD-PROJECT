@@ -1,0 +1,199 @@
+/* Import Bootstrap & Icons */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+:root {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Premium Luxury Palette */
+  --bg-creme: #FDFBF7;
+  --bg-card: #FFFFFF;
+  --bg-dark: #161514;
+  --text-main: #2A2725;
+  --text-muted: #6B6560;
+  --burgundy: #7A1C29;
+  --burgundy-hover: #60141F;
+  --gold: #C5A059;
+  --gold-light: #F4EBD9;
+  --gold-hover: #AB853D;
+  --border-subtle: #EAE5DE;
+  --shadow-soft: 0 10px 30px rgba(28, 25, 23, 0.06);
+  --shadow-hover: 0 18px 40px rgba(122, 28, 41, 0.12);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-creme);
+  color: var(--text-main);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  letter-spacing: -0.01em;
+}
+
+/* Luxury Card */
+.luxury-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 14px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.luxury-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+/* Primary Burgundy Button */
+.btn-burgundy {
+  background-color: var(--burgundy);
+  color: #FFFFFF;
+  border: 1px solid var(--burgundy);
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 0.6rem 1.4rem;
+  transition: all 0.2s ease;
+}
+
+.btn-burgundy:hover, .btn-burgundy:focus {
+  background-color: var(--burgundy-hover);
+  border-color: var(--burgundy-hover);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(122, 28, 41, 0.3);
+}
+
+/* Gold Outline Button */
+.btn-gold-outline {
+  background-color: transparent;
+  color: var(--text-main);
+  border: 1.5px solid var(--gold);
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 0.6rem 1.4rem;
+  transition: all 0.2s ease;
+}
+
+.btn-gold-outline:hover {
+  background-color: var(--gold-light);
+  color: var(--burgundy);
+  border-color: var(--gold);
+}
+
+/* Gold Badge */
+.badge-gold {
+  background-color: var(--gold-light);
+  color: #7A5312;
+  font-weight: 600;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+/* Burgundy Badge */
+.badge-burgundy {
+  background-color: rgba(122, 28, 41, 0.08);
+  color: var(--burgundy);
+  font-weight: 600;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+}
+
+/* Hero Section */
+.hero-banner {
+  background: linear-gradient(135deg, rgba(22, 21, 20, 0.88), rgba(64, 15, 23, 0.85)),
+              url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: #FFFFFF;
+  border-radius: 18px;
+  padding: 4.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Navbar Styling */
+.luxury-navbar {
+  background: rgba(253, 251, 247, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--text-main) !important;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--burgundy) !important;
+}
+
+/* Slot button */
+.slot-pill {
+  border: 1px solid var(--border-subtle);
+  background: #FFFFFF;
+  color: var(--text-main);
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.15s ease;
+}
+
+.slot-pill:hover:not(:disabled) {
+  border-color: var(--gold);
+  background: var(--gold-light);
+}
+
+.slot-pill.active {
+  background: var(--burgundy);
+  color: #FFFFFF;
+  border-color: var(--burgundy);
+}
+
+.slot-pill:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+/* Status Badges */
+.status-confirmed {
+  background-color: #E6F4EA;
+  color: #137333;
+}
+.status-seated {
+  background-color: #E8F0FE;
+  color: #1A73E8;
+}
+.status-pending {
+  background-color: #FEF7E0;
+  color: #B06000;
+}
+.status-completed {
+  background-color: #F1F3F4;
+  color: #3C4043;
+}
+.status-cancelled, .status-rejected {
+  background-color: #FCE8E6;
+  color: #C5221F;
+}
+
+/* Conflict Banner */
+.conflict-alert {
+  background-color: #FFF0F0;
+  border-left: 4px solid var(--burgundy);
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  color: #7A1C29;
+}
